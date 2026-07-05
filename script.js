@@ -1,5 +1,5 @@
 // =====================================
-// Gender Reveal Ver2
+// Gender Reveal - Complete Version
 // =====================================
 
 const balloon = document.getElementById("balloon");
@@ -7,33 +7,26 @@ const reveal = document.getElementById("reveal");
 const container = document.querySelector(".container");
 const sparkleArea = document.querySelector(".sparkles");
 
-// -------------------------
-// キラキラ背景
-// -------------------------
+// ----------------------------
+// Background Sparkles
+// ----------------------------
 
-for(let i=0;i<30;i++){
+for(let i=0;i<35;i++){
 
     const star=document.createElement("span");
-
-    star.style.position="absolute";
-    star.style.width="5px";
-    star.style.height="5px";
-    star.style.borderRadius="50%";
-    star.style.background="rgba(255,255,255,.9)";
 
     star.style.left=Math.random()*100+"%";
     star.style.top=Math.random()*100+"%";
 
-    star.style.animation=
-    `twinkle ${2+Math.random()*3}s infinite`;
+    star.style.animationDelay=Math.random()*3+"s";
 
     sparkleArea.appendChild(star);
 
 }
 
-// -------------------------
-// ハートを飛ばす
-// -------------------------
+// ----------------------------
+// Floating Hearts
+// ----------------------------
 
 function createHeart(){
 
@@ -42,58 +35,77 @@ function createHeart(){
     heart.innerHTML="💗";
 
     heart.style.position="fixed";
+
     heart.style.left=Math.random()*100+"vw";
-    heart.style.top="100vh";
-    heart.style.fontSize=(18+Math.random()*18)+"px";
+
+    heart.style.top="105vh";
+
+    heart.style.fontSize=(18+Math.random()*22)+"px";
+
     heart.style.pointerEvents="none";
-    heart.style.zIndex="999";
+
+    heart.style.zIndex="9999";
 
     document.body.appendChild(heart);
 
     heart.animate([
 
         {
+
             transform:"translateY(0) rotate(0deg)",
+
             opacity:1
+
         },
 
         {
-            transform:`translateY(-${600+Math.random()*200}px)
-                      translateX(${Math.random()*120-60}px)
-                      rotate(${Math.random()*180}deg)`,
+
+            transform:`
+                translateY(-700px)
+                translateX(${Math.random()*120-60}px)
+                rotate(${Math.random()*180-90}deg)
+            `,
+
             opacity:0
+
         }
 
     ],{
 
-        duration:3500,
+        duration:3800,
+
         easing:"ease-out"
 
     });
 
-    setTimeout(()=>heart.remove(),3400);
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },3800);
 
 }
 
-// -------------------------
-// 紙吹雪
-// -------------------------
+// ----------------------------
+// Confetti
+// ----------------------------
 
 function fireConfetti(){
 
     confetti({
 
-        particleCount:180,
+        particleCount:220,
 
-        spread:120,
+        spread:140,
 
-        origin:{y:.6},
+        origin:{y:.65},
 
         colors:[
             "#FFD6E8",
-            "#FFFFFF",
             "#FFE58A",
-            "#F7A9C4"
+            "#FFFFFF",
+            "#F8AFC8",
+            "#F6D6FF"
         ]
 
     });
@@ -128,43 +140,27 @@ function fireConfetti(){
 
 }
 
-// -------------------------
+// ----------------------------
 // Reveal
-// -------------------------
+// ----------------------------
 
 function revealGirl(){
 
     balloon.style.pointerEvents="none";
 
-    balloon.animate([
-
-        {transform:"scale(1)"},
-
-        {transform:"scale(.88)"},
-
-        {transform:"scale(1.05)"},
-
-        {transform:"scale(0)"}
-
-    ],{
-
-        duration:500,
-
-        easing:"ease-in"
-
-    });
+    balloon.classList.add("pop");
 
     setTimeout(()=>{
 
         fireConfetti();
 
-        for(let i=0;i<20;i++){
+        for(let i=0;i<35;i++){
 
-            setTimeout(createHeart,i*120);
+            setTimeout(createHeart,i*90);
 
         }
 
-    },450);
+    },350);
 
     setTimeout(()=>{
 
@@ -172,40 +168,21 @@ function revealGirl(){
 
         reveal.classList.remove("hidden");
 
-        reveal.animate([
-
-            {
-                opacity:0,
-                transform:"translateY(40px) scale(.9)"
-            },
-
-            {
-                opacity:1,
-                transform:"translateY(0) scale(1)"
-            }
-
-        ],{
-
-            duration:900,
-            fill:"forwards"
-
-        });
-
     },700);
 
 }
 
-// -------------------------
+// ----------------------------
 
 balloon.addEventListener("click",revealGirl);
 
-balloon.addEventListener("touchstart",function(){
+balloon.addEventListener("touchstart",()=>{
 
     balloon.style.transform="scale(.97)";
 
 });
 
-balloon.addEventListener("touchend",function(){
+balloon.addEventListener("touchend",()=>{
 
     balloon.style.transform="";
 
