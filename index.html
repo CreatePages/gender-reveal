@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gender Reveal</title>
+
+    <meta name="theme-color" content="#FFEAF2">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- タイトル -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+    <!-- 日本語 -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 紙吹雪 -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 背景 -->
+
+    <div class="background">
+
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+
+        <div class="sparkles"></div>
+
+    </div>
+
+    <!-- メイン -->
+
+    <main class="container">
+
+        <p class="welcome">
+            Welcome Baby
+        </p>
+
+        <h1>
+            赤ちゃんからのお知らせ
+        </h1>
+
+        <p class="description">
+            風船をタップしてね♡
+        </p>
+
+        <!-- Balloon -->
+
+        <div id="balloon" class="balloon">
+
+            <div class="shine"></div>
+
+            <div class="highlight"></div>
+
+            <div class="knot"></div>
+
+            <div class="string"></div>
+
+        </div>
+
+        <p class="tap">
+            Tap to Reveal ♡
+        </p>
+
+    </main>
+
+    <!-- Reveal -->
+
+    <section id="reveal" class="reveal hidden">
+
+        <div class="heart">
+            💗
+        </div>
+
+        <h2>
+            It's a Girl!
+        </h2>
+
+        <p class="message">
+
+            Congratulations!
+
+            <br><br>
+
+            Our little princess
+            is on the way.
+
+        </p>
+
+        <div class="thanks">
+
+            Thank you
+            for celebrating
+            with us ♡
+
+        </div>
+
+    </section>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
