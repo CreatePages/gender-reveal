@@ -185,33 +185,39 @@ function fireConfetti(){
 // Reveal
 // ============================
 
-function revealGirl(){
 
-    balloon.style.pointerEvents="none";
+
+function revealGirl() {
+
+    balloon.style.pointerEvents = "none";
 
     balloon.classList.add("pop");
 
     flash();
 
-    setTimeout(()=>{
+    setTimeout(fireConfetti, 150);
 
-        fireConfetti();
+    for (let i = 0; i < 40; i++) {
 
-    },150);
-
-    for(let i=0;i<40;i++){
-
-        setTimeout(createHeart,i*80);
+        setTimeout(createHeart, i * 80);
 
     }
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        main.style.display="none";
+        // Welcome画面を非表示
 
-        reveal.classList.remove("hidden");
+        document.getElementById("main").style.display = "none";
 
-    },700);
+        // 性別発表カードを表示
+
+        const revealSection = document.getElementById("reveal");
+
+        revealSection.classList.remove("hidden");
+
+        revealSection.style.display = "flex";
+
+    }, 700);
 
 }
 
