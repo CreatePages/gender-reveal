@@ -4,39 +4,29 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0">
+    <title>Gender Reveal 💗</title>
 
-    <title>Gender Reveal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta name="theme-color"
-          content="#FFF6D8">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="style.css">
-
+    <!-- Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 </head>
 
 <body>
 
-    <!-- 背景 -->
+    <!-- Background -->
 
     <div class="background">
-
-        <div class="sun-glow"></div>
 
         <div class="cloud cloud1"></div>
         <div class="cloud cloud2"></div>
@@ -46,42 +36,36 @@
 
     </div>
 
-    <!-- ガーランド -->
+    <!-- Garland -->
 
     <div class="garland">
 
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="flag"></span>
+        <span class="flag"></span>
+        <span class="flag"></span>
+        <span class="flag"></span>
+        <span class="flag"></span>
+        <span class="flag"></span>
+        <span class="flag"></span>
+        <span class="flag"></span>
 
     </div>
 
-    <!-- メイン -->
+    <!-- Main -->
 
-    <main class="container">
+    <main id="main" class="container">
 
-        <p class="welcome">
+        <p class="small-title">
+            Baby Announcement
+        </p>
 
+        <h1 class="welcome">
             Welcome Baby
-
-        </p>
-
-        <p class="sub">
-
-            A little surprise awaits...
-
-        </p>
-
-        <h1>
-
-            赤ちゃんからのお知らせ
-
         </h1>
+
+        <p class="description">
+            A little surprise awaits... ♡
+        </p>
 
         <!-- Balloon -->
 
@@ -89,59 +73,66 @@
 
             <img
                 src="balloon.svg"
-                alt="Balloon"
+                alt="Gender Reveal Balloon"
                 class="balloon-svg">
+
         </div>
 
         <p class="tap">
-
-            Tap to Reveal ♡
-
+            Tap the Balloon 🎈
         </p>
 
     </main>
 
     <!-- Reveal -->
 
-    <section
-        id="reveal"
-        class="reveal hidden">
+    <section id="reveal" class="reveal hidden">
 
         <div class="reveal-card">
 
-            <div class="heart">
-
-                🎀
-
+            <div class="emoji">
+                👶💗
             </div>
 
             <h2>
-
                 It's a Girl!
-
             </h2>
 
             <p class="message">
 
-                Congratulations!
+                Our little princess<br>
+                is on the way.
 
                 <br><br>
 
-                Our little princess
-                is on the way.
+                We can't wait to meet her.
 
             </p>
+
+            <div class="heart-line">
+                🤍🤍🤍
+            </div>
 
             <p class="thanks">
 
                 Thank you for celebrating
-                with us ♡
+                this special moment with us.
 
             </p>
 
         </div>
 
     </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        Made with love 🤍
+
+    </footer>
+
+    <!-- JS -->
 
     <script src="script.js"></script>
 
