@@ -1,147 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="240" height="330" viewBox="0 0 240 330" xmlns="http://www.w3.org/2000/svg">
+<svg width="260" height="360" viewBox="0 0 260 360" xmlns="http://www.w3.org/2000/svg">
 
-  <defs>
+<defs>
 
-    <!-- Balloon -->
-    <linearGradient id="balloonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#E9DCFF"/>
-      <stop offset="40%" stop-color="#D2BCFF"/>
-      <stop offset="70%" stop-color="#B58DEB"/>
-      <stop offset="100%" stop-color="#8E68D0"/>
-    </linearGradient>
+<linearGradient id="balloon" x1="20%" y1="10%" x2="80%" y2="100%">
+<stop offset="0%" stop-color="#EEE2FF"/>
+<stop offset="35%" stop-color="#D9C3FF"/>
+<stop offset="70%" stop-color="#B792F2"/>
+<stop offset="100%" stop-color="#8E67CF"/>
+</linearGradient>
 
-    <!-- Shine -->
-    <linearGradient id="shineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="white" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="white" stop-opacity="0"/>
-    </linearGradient>
+<radialGradient id="light">
 
-    <!-- Shadow -->
-    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0"
-                    dy="12"
-                    stdDeviation="10"
-                    flood-color="#7B61B8"
-                    flood-opacity=".25"/>
-    </filter>
+<stop offset="0%" stop-color="white" stop-opacity=".95"/>
+<stop offset="100%" stop-color="white" stop-opacity="0"/>
 
-  </defs>
+</radialGradient>
 
-  <!-- Balloon -->
+<filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0"
+dy="16"
+stdDeviation="14"
+flood-color="#7A63C8"
+flood-opacity=".28"/>
+</filter>
 
-  <path
-      filter="url(#shadow)"
-      fill="url(#balloonGradient)"
-      d="
+</defs>
 
-      M120 20
+<!-- Balloon -->
 
-      C65 20 30 65 30 120
+<path
 
-      C30 200 85 240 120 270
+filter="url(#shadow)"
 
-      C155 240 210 200 210 120
+fill="url(#balloon)"
 
-      C210 65 175 20 120 20
+d="
 
-      Z
+M130 22
 
-      "/>
+C73 22 38 72 38 132
 
-  <!-- Shine -->
+C38 215 88 255 130 305
 
-  <ellipse
+C172 255 222 215 222 132
 
-      cx="82"
+C222 72 187 22 130 22
 
-      cy="82"
+Z
 
-      rx="18"
+"/>
 
-      ry="60"
+<!-- Big reflection -->
 
-      fill="url(#shineGradient)"
+<ellipse
 
-      transform="rotate(-18 82 82)"
+cx="88"
 
-      opacity=".85"
+cy="98"
 
-  />
+rx="22"
 
-  <!-- Highlight -->
+ry="82"
 
-  <circle
+fill="url(#light)"
 
-      cx="104"
+transform="rotate(-18 88 98)"
 
-      cy="65"
+opacity=".72"
 
-      r="10"
+/>
 
-      fill="white"
+<!-- Reflection -->
 
-      opacity=".85"
+<ellipse
 
-  />
+cx="110"
 
-  <!-- Sparkles -->
+cy="76"
 
-  <circle cx="82" cy="165" r="3" fill="white" opacity=".8"/>
+rx="10"
 
-  <circle cx="155" cy="110" r="2.5" fill="white" opacity=".7"/>
+ry="10"
 
-  <circle cx="145" cy="180" r="2" fill="white" opacity=".7"/>
+fill="white"
 
-  <circle cx="105" cy="145" r="2" fill="white" opacity=".6"/>
+opacity=".85"
 
-  <!-- Knot -->
+/>
 
-  <polygon
+<!-- Reflection -->
 
-      points="112,272 128,272 120,288"
+<ellipse
 
-      fill="#9874D9"
+cx="165"
 
-  />
+cy="110"
 
-  <!-- Ribbon -->
+rx="5"
 
-  <path
+ry="5"
 
-      d="M112 280
-         C96 278 92 294 102 300
-         C108 295 112 289 112 280Z"
+fill="white"
 
-      fill="#D6C0FF"
+opacity=".55"
 
-  />
+/>
 
-  <path
+<!-- Reflection -->
 
-      d="M128 280
-         C144 278 148 294 138 300
-         C132 295 128 289 128 280Z"
+<ellipse
 
-      fill="#D6C0FF"
+cx="150"
 
-  />
+cy="170"
 
-  <!-- String -->
+rx="4"
 
-  <path
+ry="4"
 
-      d="M120 288
-         C118 315 122 320 120 330"
+fill="white"
 
-      stroke="#D9C9A6"
+opacity=".45"
 
-      stroke-width="2"
+/>
 
-      fill="none"
+<!-- Reflection -->
 
-      stroke-linecap="round"
+<ellipse
 
-  />
+cx="95"
+
+cy="185"
+
+rx="5"
+
+ry="5"
+
+fill="white"
+
+opacity=".6"
+
+/>
+
+<!-- Knot -->
+
+<polygon
+
+points="120,304 140,304 130,324"
+
+fill="#8E67CF"
+
+/>
+
+<!-- Ribbon -->
+
+<path
+
+d="
+
+M120 312
+
+C98 308 93 330 107 338
+
+C116 330 120 322 120 312
+
+"
+
+fill="#CDB4FF"
+
+/>
+
+<path
+
+d="
+
+M140 312
+
+C162 308 167 330 153 338
+
+C144 330 140 322 140 312
+
+"
+
+fill="#CDB4FF"
+
+/>
+
+<!-- String -->
+
+<path
+
+d="
+
+M130 322
+
+C126 340 136 350 130 360
+
+"
+
+stroke="#C9B28F"
+
+stroke-width="2.3"
+
+stroke-linecap="round"
+
+fill="none"
+
+/>
 
 </svg>
