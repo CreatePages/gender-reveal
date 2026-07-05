@@ -318,3 +318,348 @@ h1{
 
 }
 
+    animation:shadowFloat 4s ease-in-out infinite;
+
+}
+
+.tap{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    color:#7A6798;
+
+    letter-spacing:1px;
+
+    animation:pulse 2s infinite;
+
+}
+
+/* ==========================
+   Reveal
+========================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+.reveal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,252,246,.96),
+        rgba(255,245,250,.96)
+    );
+
+    backdrop-filter:blur(10px);
+
+    z-index:999;
+
+}
+
+.reveal-card{
+
+    width:88%;
+
+    max-width:360px;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.12);
+
+    animation:cardShow .8s ease;
+
+}
+
+.heart{
+
+    font-size:68px;
+
+    animation:heartbeat 1.2s infinite;
+
+}
+
+.reveal h2{
+
+    margin-top:18px;
+
+    font-size:52px;
+
+    font-family:'Playfair Display',serif;
+
+    color:#FF82B3;
+
+}
+
+.message{
+
+    margin-top:25px;
+
+    line-height:2;
+
+    font-size:20px;
+
+    color:#666;
+
+}
+
+.thanks{
+
+    margin-top:30px;
+
+    color:#999;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.footer{
+
+    position:fixed;
+
+    bottom:20px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#B7B7B7;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+}
+
+/* ==========================
+   Animation
+========================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-18px)
+            rotate(2deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+
+    }
+
+}
+
+@keyframes shadowFloat{
+
+    0%{
+
+        transform:
+            translateX(-50%)
+            scale(.95);
+
+        opacity:.12;
+
+    }
+
+    50%{
+
+        transform:
+            translateX(-50%)
+            scale(.80);
+
+        opacity:.05;
+
+    }
+
+    100%{
+
+        transform:
+            translateX(-50%)
+            scale(.95);
+
+        opacity:.12;
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        opacity:.6;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.6;
+
+    }
+
+}
+
+@keyframes heartbeat{
+
+    50%{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px)
+            scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+/* ==========================
+   Balloon Pop
+========================== */
+
+.balloon.pop{
+
+    animation:none;
+
+}
+
+.balloon.pop .balloon-svg{
+
+    animation:pop .45s ease forwards;
+
+}
+
+@keyframes pop{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    30%{
+
+        transform:scale(.9);
+
+    }
+
+    70%{
+
+        transform:scale(1.08);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(0);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width:480px){
+
+    .welcome{
+
+        font-size:46px;
+
+    }
+
+    h1{
+
+        font-size:26px;
+
+    }
+
+    .balloon{
+
+        width:220px;
+
+    }
+
+    .reveal h2{
+
+        font-size:42px;
+
+    }
+
+    .message{
+
+        font-size:18px;
+
+    }
+
+}
