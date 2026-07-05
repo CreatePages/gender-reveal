@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="260" height="360" viewBox="0 0 260 360" xmlns="http://www.w3.org/2000/svg">
+<svg width="260" height="360" viewBox="0 0 260 360"
+xmlns="http://www.w3.org/2000/svg">
 
 <defs>
 
-<linearGradient id="balloon" x1="20%" y1="10%" x2="80%" y2="100%">
-<stop offset="0%" stop-color="#EEE2FF"/>
-<stop offset="35%" stop-color="#D9C3FF"/>
-<stop offset="70%" stop-color="#B792F2"/>
-<stop offset="100%" stop-color="#8E67CF"/>
+<linearGradient id="balloonGradient"
+x1="15%" y1="5%"
+x2="85%" y2="100%">
+
+<stop offset="0%" stop-color="#F1E8FF"/>
+
+<stop offset="30%" stop-color="#DEC8FF"/>
+
+<stop offset="60%" stop-color="#BE9AF2"/>
+
+<stop offset="100%" stop-color="#8D68CF"/>
+
 </linearGradient>
 
-<radialGradient id="light">
+<radialGradient id="shine">
 
 <stop offset="0%" stop-color="white" stop-opacity=".95"/>
+
 <stop offset="100%" stop-color="white" stop-opacity="0"/>
 
 </radialGradient>
 
-<filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
-<feDropShadow dx="0"
-dy="16"
-stdDeviation="14"
-flood-color="#7A63C8"
-flood-opacity=".28"/>
+<filter id="shadow"
+x="-40%"
+y="-40%"
+width="180%"
+height="180%">
+
+<feDropShadow
+
+dx="0"
+
+dy="14"
+
+stdDeviation="12"
+
+flood-color="#8366C7"
+
+flood-opacity=".25"/>
+
 </filter>
 
 </defs>
@@ -33,41 +54,41 @@ flood-opacity=".28"/>
 
 filter="url(#shadow)"
 
-fill="url(#balloon)"
+fill="url(#balloonGradient)"
 
 d="
 
-M130 22
+M130 20
 
-C73 22 38 72 38 132
+C72 20 38 70 38 132
 
-C38 215 88 255 130 305
+C38 215 87 260 130 305
 
-C172 255 222 215 222 132
+C173 260 222 215 222 132
 
-C222 72 187 22 130 22
+C222 70 188 20 130 20
 
 Z
 
 "/>
 
-<!-- Big reflection -->
+<!-- Large Shine -->
 
 <ellipse
 
 cx="88"
 
-cy="98"
+cy="95"
 
 rx="22"
 
 ry="82"
 
-fill="url(#light)"
+fill="url(#shine)"
 
-transform="rotate(-18 88 98)"
+transform="rotate(-18 88 95)"
 
-opacity=".72"
+opacity=".82"
 
 />
 
@@ -75,9 +96,9 @@ opacity=".72"
 
 <ellipse
 
-cx="110"
+cx="108"
 
-cy="76"
+cy="72"
 
 rx="10"
 
@@ -85,17 +106,15 @@ ry="10"
 
 fill="white"
 
-opacity=".85"
+opacity=".9"
 
 />
 
-<!-- Reflection -->
-
 <ellipse
 
-cx="165"
+cx="160"
 
-cy="110"
+cy="108"
 
 rx="5"
 
@@ -107,13 +126,11 @@ opacity=".55"
 
 />
 
-<!-- Reflection -->
-
 <ellipse
 
 cx="150"
 
-cy="170"
+cy="175"
 
 rx="4"
 
@@ -125,13 +142,11 @@ opacity=".45"
 
 />
 
-<!-- Reflection -->
-
 <ellipse
 
-cx="95"
+cx="96"
 
-cy="185"
+cy="188"
 
 rx="5"
 
@@ -139,7 +154,7 @@ ry="5"
 
 fill="white"
 
-opacity=".6"
+opacity=".55"
 
 />
 
@@ -147,9 +162,9 @@ opacity=".6"
 
 <polygon
 
-points="120,304 140,304 130,324"
+points="120,304 140,304 130,322"
 
-fill="#8E67CF"
+fill="#8D68CF"
 
 />
 
@@ -159,15 +174,15 @@ fill="#8E67CF"
 
 d="
 
-M120 312
+M120 311
 
-C98 308 93 330 107 338
+C100 307 95 327 108 336
 
-C116 330 120 322 120 312
+C117 328 120 320 120 311
 
 "
 
-fill="#CDB4FF"
+fill="#D8C5FF"
 
 />
 
@@ -175,15 +190,15 @@ fill="#CDB4FF"
 
 d="
 
-M140 312
+M140 311
 
-C162 308 167 330 153 338
+C160 307 165 327 152 336
 
-C144 330 140 322 140 312
+C143 328 140 320 140 311
 
 "
 
-fill="#CDB4FF"
+fill="#D8C5FF"
 
 />
 
@@ -195,18 +210,16 @@ d="
 
 M130 322
 
-C126 340 136 350 130 360
+C126 338 136 348 130 360
 
 "
 
-stroke="#C9B28F"
+stroke="#C9B08A"
 
-stroke-width="2.3"
+stroke-width="2.2"
 
 stroke-linecap="round"
 
-fill="none"
-
-/>
+fill="none"/>
 
 </svg>
