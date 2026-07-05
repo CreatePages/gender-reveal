@@ -754,3 +754,26 @@ h1{
     }
 
 }
+.balloon{
+
+    width:220px;
+
+    margin:70px auto 30px;
+
+    animation:float 3.8s ease-in-out infinite;
+
+}
+
+.balloon-svg{
+
+    width:100%;
+
+    display:block;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    filter:drop-shadow(0 20px 35px rgba(125,95,190,.15));
+
+}
