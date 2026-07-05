@@ -1,62 +1,83 @@
-// ===============================
-// Gender Reveal
-// ===============================
+// =====================================
+// Gender Reveal Ver2
+// =====================================
 
 const balloon = document.getElementById("balloon");
 const reveal = document.getElementById("reveal");
 const container = document.querySelector(".container");
-
-// -------------------------------
-// 背景キラキラ
-// -------------------------------
-
 const sparkleArea = document.querySelector(".sparkles");
 
-for (let i = 0; i < 25; i++) {
+// -------------------------
+// キラキラ背景
+// -------------------------
 
-    const star = document.createElement("span");
+for(let i=0;i<30;i++){
 
-    star.style.position = "absolute";
-    star.style.width = "6px";
-    star.style.height = "6px";
-    star.style.borderRadius = "50%";
-    star.style.background = "rgba(255,255,255,.9)";
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.animation = `twinkle ${2 + Math.random() * 3}s infinite`;
+    const star=document.createElement("span");
+
+    star.style.position="absolute";
+    star.style.width="5px";
+    star.style.height="5px";
+    star.style.borderRadius="50%";
+    star.style.background="rgba(255,255,255,.9)";
+
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animation=
+    `twinkle ${2+Math.random()*3}s infinite`;
 
     sparkleArea.appendChild(star);
 
 }
 
-// twinkleアニメーションを追加
-const style = document.createElement("style");
+// -------------------------
+// ハートを飛ばす
+// -------------------------
 
-style.textContent = `
-@keyframes twinkle{
+function createHeart(){
 
-0%,100%{
+    const heart=document.createElement("div");
 
-opacity:.2;
-transform:scale(.6);
+    heart.innerHTML="💗";
+
+    heart.style.position="fixed";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.top="100vh";
+    heart.style.fontSize=(18+Math.random()*18)+"px";
+    heart.style.pointerEvents="none";
+    heart.style.zIndex="999";
+
+    document.body.appendChild(heart);
+
+    heart.animate([
+
+        {
+            transform:"translateY(0) rotate(0deg)",
+            opacity:1
+        },
+
+        {
+            transform:`translateY(-${600+Math.random()*200}px)
+                      translateX(${Math.random()*120-60}px)
+                      rotate(${Math.random()*180}deg)`,
+            opacity:0
+        }
+
+    ],{
+
+        duration:3500,
+        easing:"ease-out"
+
+    });
+
+    setTimeout(()=>heart.remove(),3400);
 
 }
 
-50%{
-
-opacity:1;
-transform:scale(1.3);
-
-}
-
-}
-`;
-
-document.head.appendChild(style);
-
-// -------------------------------
+// -------------------------
 // 紙吹雪
-// -------------------------------
+// -------------------------
 
 function fireConfetti(){
 
@@ -66,13 +87,13 @@ function fireConfetti(){
 
         spread:120,
 
-        origin:{y:0.55},
+        origin:{y:.6},
 
         colors:[
-            "#FFD4E5",
-            "#FF8DB8",
+            "#FFD6E8",
             "#FFFFFF",
-            "#FFE38A"
+            "#FFE58A",
+            "#F7A9C4"
         ]
 
     });
@@ -85,7 +106,7 @@ function fireConfetti(){
 
             angle:60,
 
-            spread:70,
+            spread:80,
 
             origin:{x:0}
 
@@ -97,35 +118,37 @@ function fireConfetti(){
 
             angle:120,
 
-            spread:70,
+            spread:80,
 
             origin:{x:1}
 
         });
 
-    },300);
+    },250);
 
 }
 
-// -------------------------------
-// Balloon
-// -------------------------------
+// -------------------------
+// Reveal
+// -------------------------
 
 function revealGirl(){
+
+    balloon.style.pointerEvents="none";
 
     balloon.animate([
 
         {transform:"scale(1)"},
 
-        {transform:"scale(.92)"},
+        {transform:"scale(.88)"},
 
-        {transform:"scale(1.08)"},
+        {transform:"scale(1.05)"},
 
         {transform:"scale(0)"}
 
     ],{
 
-        duration:450,
+        duration:500,
 
         easing:"ease-in"
 
@@ -133,11 +156,17 @@ function revealGirl(){
 
     setTimeout(()=>{
 
-        balloon.style.display="none";
-
-        document.querySelector(".tap").style.display="none";
-
         fireConfetti();
+
+        for(let i=0;i<20;i++){
+
+            setTimeout(createHeart,i*120);
+
+        }
+
+    },450);
+
+    setTimeout(()=>{
 
         container.style.display="none";
 
@@ -147,12 +176,12 @@ function revealGirl(){
 
             {
                 opacity:0,
-                transform:"translateY(40px)"
+                transform:"translateY(40px) scale(.9)"
             },
 
             {
                 opacity:1,
-                transform:"translateY(0)"
+                transform:"translateY(0) scale(1)"
             }
 
         ],{
@@ -162,18 +191,22 @@ function revealGirl(){
 
         });
 
-    },420);
+    },700);
 
 }
 
-balloon.addEventListener("click", revealGirl);
+// -------------------------
 
-balloon.addEventListener("keypress",(e)=>{
+balloon.addEventListener("click",revealGirl);
 
-    if(e.key==="Enter"){
+balloon.addEventListener("touchstart",function(){
 
-        revealGirl();
+    balloon.style.transform="scale(.97)";
 
-    }
+});
+
+balloon.addEventListener("touchend",function(){
+
+    balloon.style.transform="";
 
 });
