@@ -32,7 +32,7 @@ function createHeart(){
 
     const heart=document.createElement("div");
 
-    heart.innerHTML="💗";
+    heart.innerHTML="🫧";
 
     heart.style.position="fixed";
 
