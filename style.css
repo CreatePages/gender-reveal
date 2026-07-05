@@ -241,25 +241,38 @@ h1{
     content:"";
 
     position:absolute;
-
     inset:0;
 
     border-radius:50% 50% 48% 48%;
 
     background:
 
-    radial-gradient(circle at 30% 28%,
+    radial-gradient(circle at 28% 20%,
     rgba(255,255,255,.95) 0%,
-    rgba(255,255,255,.45) 15%,
-    rgba(255,170,205,.95) 70%);
+    rgba(255,255,255,.7) 10%,
+    rgba(255,255,255,0) 20%),
+
+    radial-gradient(circle at 70% 80%,
+    rgba(255,255,255,.18),
+    transparent 40%),
+
+    linear-gradient(
+        160deg,
+        #d9c3ff 0%,
+        #bea0ff 28%,
+        #a87fe9 58%,
+        #8b67cf 100%
+    );
 
     box-shadow:
 
-    inset -12px -18px 25px rgba(255,255,255,.45),
+    inset -15px -18px 25px rgba(255,255,255,.25),
 
-    inset 12px 12px 25px rgba(255,120,170,.18),
+    inset 18px 20px 30px rgba(255,255,255,.12),
 
-    0 20px 40px rgba(255,150,190,.25);
+    inset -10px -20px 40px rgba(0,0,0,.12),
+
+    0 25px 45px rgba(143,104,209,.28);
 
 }
 
@@ -269,19 +282,25 @@ h1{
 
     position:absolute;
 
-    width:40px;
-    height:95px;
+    width:45px;
+    height:110px;
 
-    background:rgba(255,255,255,.65);
+    left:30px;
+    top:25px;
+
+    background:linear-gradient(
+
+        rgba(255,255,255,.95),
+
+        rgba(255,255,255,.15)
+
+    );
 
     border-radius:50%;
 
-    left:38px;
-    top:30px;
-
     transform:rotate(-18deg);
 
-    filter:blur(2px);
+    filter:blur(1px);
 
 }
 
@@ -291,17 +310,19 @@ h1{
 
     position:absolute;
 
-    width:18px;
-    height:18px;
-
-    background:white;
+    width:24px;
+    height:24px;
 
     border-radius:50%;
 
-    top:36px;
-    left:58px;
+    background:white;
 
-    opacity:.9;
+    opacity:.95;
+
+    top:38px;
+    left:55px;
+
+    filter:blur(.4px);
 
 }
 
@@ -309,53 +330,19 @@ h1{
 
 .knot{
 
-    position:absolute;
-
-    width:18px;
-    height:18px;
-
-    background:#ff8fb8;
-
-    bottom:-8px;
-    left:81px;
-
-    transform:rotate(45deg);
+    background:#9d79de;
 
 }
 
 .knot::before{
 
-    content:"";
-
-    position:absolute;
-
-    width:18px;
-    height:12px;
-
-    background:#ffb2cf;
-
-    left:-12px;
-    top:3px;
-
-    border-radius:12px 0 12px 12px;
+    background:#cdb6ff;
 
 }
 
 .knot::after{
 
-    content:"";
-
-    position:absolute;
-
-    width:18px;
-    height:12px;
-
-    background:#ffb2cf;
-
-    right:-12px;
-    top:3px;
-
-    border-radius:0 12px 12px 12px;
+    background:#cdb6ff;
 
 }
 
@@ -377,11 +364,23 @@ h1{
 
 .tap{
 
-    color:#ff78ab;
+    position:absolute;
 
-    font-size:22px;
+    top:95px;
 
-    animation:pulse 1.4s infinite;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:28px;
+
+    color:white;
+
+    font-family:'Playfair Display',serif;
+
+    text-shadow:0 3px 10px rgba(0,0,0,.2);
+
+    animation:pulse 1.5s infinite;
 
 }
 
