@@ -2,26 +2,30 @@
 <html lang="ja">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0">
 
     <title>Gender Reveal</title>
 
-    <meta name="theme-color" content="#FFEAF2">
+    <meta name="theme-color"
+          content="#FFF6D8">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <!-- タイトル -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <!-- 日本語 -->
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+          rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="style.css">
 
-    <!-- 紙吹雪 -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 </head>
@@ -32,6 +36,8 @@
 
     <div class="background">
 
+        <div class="sun-glow"></div>
+
         <div class="cloud cloud1"></div>
         <div class="cloud cloud2"></div>
         <div class="cloud cloud3"></div>
@@ -40,29 +46,59 @@
 
     </div>
 
+    <!-- ガーランド -->
+
+    <div class="garland">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
     <!-- メイン -->
 
     <main class="container">
 
         <p class="welcome">
+
             Welcome Baby
+
+        </p>
+
+        <p class="sub">
+
+            A little surprise awaits...
+
         </p>
 
         <h1>
-            赤ちゃんからのお知らせ
-        </h1>
 
-        <p class="description">
-            風船をタップしてね♡
-        </p>
+            赤ちゃんからのお知らせ
+
+        </h1>
 
         <!-- Balloon -->
 
-        <div id="balloon" class="balloon" role="button" aria-label="風船を割る" tabindex="0">
+        <div id="balloon"
+             class="balloon">
 
-            <div class="shine"></div>
+            <div class="balloon-body">
 
-            <div class="highlight"></div>
+                <div class="shine"></div>
+
+                <div class="highlight"></div>
+
+                <div class="glitter g1"></div>
+                <div class="glitter g2"></div>
+                <div class="glitter g3"></div>
+
+            </div>
 
             <div class="knot"></div>
 
@@ -71,45 +107,54 @@
         </div>
 
         <p class="tap">
+
             Tap to Reveal ♡
+
         </p>
 
     </main>
 
     <!-- Reveal -->
 
-    <section id="reveal" class="reveal hidden">
+    <section
+        id="reveal"
+        class="reveal hidden">
 
-        <div class="heart">
-            💗
-        </div>
+        <div class="reveal-card">
 
-        <h2>
-            It's a Girl!
-        </h2>
+            <div class="heart">
 
-        <p class="message">
+                🎀
 
-            Congratulations!
+            </div>
 
-            <br><br>
+            <h2>
 
-            Our little princess
-            is on the way.
+                It's a Girl!
 
-        </p>
+            </h2>
 
-        <div class="thanks">
+            <p class="message">
 
-            Thank you
-            for celebrating
-            with us ♡
+                Congratulations!
+
+                <br><br>
+
+                Our little princess
+                is on the way.
+
+            </p>
+
+            <p class="thanks">
+
+                Thank you for celebrating
+                with us ♡
+
+            </p>
 
         </div>
 
     </section>
-
-    <!-- JS -->
 
     <script src="script.js"></script>
 
