@@ -1,6 +1,6 @@
-/* ==========================
-   Base
-========================== */
+/* =====================================
+   Reset
+===================================== */
 
 *{
     margin:0;
@@ -9,44 +9,81 @@
 }
 
 body{
+
     font-family:'Zen Maru Gothic',sans-serif;
-    background:linear-gradient(
 
-        180deg,
-        #FFFDF4 0%,
-        #FFF8D8 45%,
-        #FFF2BE 100%
+    background:#FFF8D8;
 
-    );
-    overflow:hidden;
     min-height:100vh;
-    color:#666;
+
+    overflow:hidden;
+
+    color:#6E6680;
+
 }
 
-/* ==========================
+/* =====================================
    Background
-========================== */
+===================================== */
 
 .background{
+
     position:fixed;
+
     inset:0;
+
     overflow:hidden;
-    z-index:-1;
+
+    z-index:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #FFFDF5 0%,
+        #FFF8DD 40%,
+        #FFF1BE 100%
+    );
+
 }
 
-/* 雲 */
+/* 太陽の光 */
+
+.sun-glow{
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        rgba(255,255,255,.85),
+        rgba(255,255,255,0)
+    );
+
+    top:-180px;
+    right:-120px;
+
+    filter:blur(10px);
+
+}
+
+/* =====================================
+   雲
+===================================== */
 
 .cloud{
 
     position:absolute;
 
-    background:#FFFEF8;
-
-    opacity:.75;
+    background:#FFFFFC;
 
     border-radius:100px;
 
-    filter:blur(1px);
+    opacity:.9;
+
+    filter:blur(.5px);
 
 }
 
@@ -57,7 +94,7 @@ body{
 
     position:absolute;
 
-    background:white;
+    background:#FFFFFC;
 
     border-radius:50%;
 
@@ -65,11 +102,12 @@ body{
 
 .cloud1{
 
-    width:140px;
-    height:48px;
+    width:170px;
+    height:58px;
 
-    top:14%;
-    left:-180px;
+    top:90px;
+
+    left:-220px;
 
     animation:cloudMove 40s linear infinite;
 
@@ -77,32 +115,32 @@ body{
 
 .cloud1::before{
 
-    width:60px;
-    height:60px;
+    width:70px;
+    height:70px;
 
-    left:15px;
-    top:-20px;
+    left:20px;
+    top:-25px;
 
 }
 
 .cloud1::after{
 
-    width:70px;
-    height:70px;
+    width:90px;
+    height:90px;
 
-    right:20px;
-    top:-30px;
+    right:18px;
+    top:-38px;
 
 }
 
 .cloud2{
 
-    width:170px;
-    height:55px;
+    width:210px;
+    height:65px;
 
-    top:34%;
+    top:260px;
 
-    left:-220px;
+    left:-280px;
 
     animation:cloudMove 55s linear infinite;
 
@@ -110,32 +148,32 @@ body{
 
 .cloud2::before{
 
-    width:70px;
-    height:70px;
+    width:85px;
+    height:85px;
 
-    left:20px;
-    top:-20px;
+    left:30px;
+    top:-28px;
 
 }
 
 .cloud2::after{
 
-    width:85px;
-    height:85px;
+    width:95px;
+    height:95px;
 
-    right:18px;
-    top:-35px;
+    right:20px;
+    top:-38px;
 
 }
 
 .cloud3{
 
-    width:120px;
-    height:42px;
+    width:150px;
+    height:50px;
 
-    top:68%;
+    bottom:140px;
 
-    left:-160px;
+    left:-180px;
 
     animation:cloudMove 48s linear infinite;
 
@@ -143,48 +181,111 @@ body{
 
 .cloud3::before{
 
-    width:55px;
-    height:55px;
+    width:60px;
+    height:60px;
 
-    left:10px;
+    left:15px;
     top:-18px;
 
 }
 
 .cloud3::after{
 
-    width:60px;
-    height:60px;
+    width:75px;
+    height:75px;
 
-    right:15px;
-    top:-25px;
-
-}
-
-@keyframes cloudMove{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(calc(100vw + 420px));
-    }
+    right:20px;
+    top:-28px;
 
 }
 
-/* ==========================
-   Layout
-========================== */
+/* =====================================
+   Sparkles
+===================================== */
+
+.sparkles{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+/* =====================================
+   Garland
+===================================== */
+
+.garland{
+
+    position:absolute;
+
+    top:35px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    z-index:20;
+
+}
+
+.garland span{
+
+    width:22px;
+
+    height:28px;
+
+    border-radius:0 0 8px 8px;
+
+}
+
+.garland span:nth-child(1),
+.garland span:nth-child(5){
+
+    background:#D8C3FF;
+
+}
+
+.garland span:nth-child(2),
+.garland span:nth-child(6){
+
+    background:#FFF;
+
+}
+
+.garland span:nth-child(3),
+.garland span:nth-child(7){
+
+    background:#FFE89A;
+
+}
+
+.garland span:nth-child(4),
+.garland span:nth-child(8){
+
+    background:#D8C3FF;
+
+}
+
+/* =====================================
+   Main
+===================================== */
 
 .container{
 
-    width:100%;
+    position:relative;
+
+    z-index:10;
+
     max-width:420px;
 
     margin:auto;
 
-    padding:70px 30px;
+    padding-top:90px;
 
     text-align:center;
 
@@ -194,305 +295,32 @@ body{
 
     font-family:'Playfair Display',serif;
 
-    font-size:42px;
+    font-size:44px;
 
-    color:#7D6AA5;
+    color:#72628E;
 
     letter-spacing:2px;
 
 }
 
-h1{
+.sub{
 
-    margin-top:18px;
+    margin-top:12px;
 
-    font-size:28px;
-
-    color:#6F668A;
-
-}
-
-.description{
-
-    margin-top:18px;
-
-    color:#8D8677;
-
-    font-size:18px;
-
-}
-
-/* ==========================
-   Balloon
-========================== */
-
-.balloon{
-
-    width:180px;
-    height:220px;
-
-    margin:70px auto 25px;
-
-    position:relative;
-
-    cursor:pointer;
-
-    animation:float 3s ease-in-out infinite;
-
-}
-
-/* 本体 */
-
-.balloon::before{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    border-radius:50% 50% 48% 48%;
-
-    background:
-
-    radial-gradient(circle at 28% 20%,
-    rgba(255,255,255,.95) 0%,
-    rgba(255,255,255,.7) 10%,
-    rgba(255,255,255,0) 20%),
-
-    radial-gradient(circle at 70% 80%,
-    rgba(255,255,255,.18),
-    transparent 40%),
-
-    linear-gradient(
-        160deg,
-        #d9c3ff 0%,
-        #bea0ff 28%,
-        #a87fe9 58%,
-        #8b67cf 100%
-    );
-
-    box-shadow:
-
-    inset -15px -18px 25px rgba(255,255,255,.25),
-
-    inset 18px 20px 30px rgba(255,255,255,.12),
-
-    inset -10px -20px 40px rgba(0,0,0,.12),
-
-    0 25px 45px rgba(143,104,209,.28);
-
-}
-
-/* 光 */
-
-.shine{
-
-    position:absolute;
-
-    width:45px;
-    height:110px;
-
-    left:30px;
-    top:25px;
-
-    background:linear-gradient(
-
-        rgba(255,255,255,.95),
-
-        rgba(255,255,255,.15)
-
-    );
-
-    border-radius:50%;
-
-    transform:rotate(-18deg);
-
-    filter:blur(1px);
-
-}
-
-/* ハイライト */
-
-.highlight{
-
-    position:absolute;
-
-    width:24px;
-    height:24px;
-
-    border-radius:50%;
-
-    background:white;
-
-    opacity:.95;
-
-    top:38px;
-    left:55px;
-
-    filter:blur(.4px);
-
-}
-
-/* リボン */
-
-.knot{
-
-    background:#9d79de;
-
-}
-
-.knot::before{
-
-    background:#cdb6ff;
-
-}
-
-.knot::after{
-
-    background:#cdb6ff;
-
-}
-
-/* 糸 */
-
-.string{
-
-    position:absolute;
-
-    width:2px;
-    height:140px;
-
-    background:#d8b2c4;
-
-    left:89px;
-    bottom:-145px;
-
-}
-
-.tap{
-
-    position:absolute;
-
-    top:95px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:28px;
-
-    color:white;
-
-    font-family:'Playfair Display',serif;
-
-    text-shadow:0 3px 10px rgba(0,0,0,.2);
-
-    animation:pulse 1.5s infinite;
-
-}
-
-/* ==========================
-   Reveal
-========================== */
-
-.hidden{
-    display:none;
-}
-
-.reveal{
-
-    text-align:center;
-
-    padding:80px 30px;
-
-}
-
-.heart{
-
-    font-size:70px;
-
-    animation:heartbeat 1s infinite;
-
-}
-
-.reveal h2{
-
-    font-family:'Playfair Display',serif;
-
-    color:#ff78ab;
-
-    font-size:52px;
-
-    margin-top:18px;
-
-}
-
-.message{
-
-    margin-top:30px;
-
-    line-height:2;
-
-    font-size:20px;
-
-}
-
-.thanks{
-
-    margin-top:50px;
-
-    color:#999;
-
-    line-height:1.8;
+    color:#8F8A80;
 
     font-size:17px;
 
 }
 
-/* ==========================
-   Animation
-========================== */
+h1{
 
-@keyframes float{
+    margin-top:30px;
 
-    0%,100%{
-        transform:translateY(0);
-    }
+    color:#6C6483;
 
-    50%{
-        transform:translateY(-16px);
-    }
+    font-size:28px;
 
-}
-
-@keyframes pulse{
-
-    50%{
-        opacity:.45;
-    }
-
-}
-
-@keyframes heartbeat{
-
-    50%{
-        transform:scale(1.12);
-    }
-
-}
-
-@media (max-width:480px){
-
-    .welcome{
-        font-size:34px;
-    }
-
-    h1{
-        font-size:24px;
-    }
-
-    .balloon{
-        transform:scale(.9);
-    }
+    line-height:1.6;
 
 }
